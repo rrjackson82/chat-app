@@ -15,9 +15,10 @@ if alias == "y":
     print(f"alis: '{alias}'")
 
 
+host = input("Server IP (leave blank for localhost): ").strip() or "127.0.0.1"
+
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect((socket.gethostbyname(socket.gethostname()), 4872))
-# client.connect((alias, 4872))
+client.connect((host, 4872))
 
 while True:
     msg = input("> ")
